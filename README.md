@@ -12,7 +12,7 @@ The Task:
 
 My Thoughts:
 
-- All in all, the assignment wasnt too hard to complete and the curriculumn provided me with all the tools I needed
+- All in all, the assignment wasnt too hard to complete and the curriculum provided me with all the tools I needed
   in order to solve this assignment.
 - I learned to differentiate between conditionals and decide for myself which tool is best fit for each task.
 - Overall, I had a great experience programming this simple game and I plan on returning to it and adding UI later!
