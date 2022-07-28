@@ -1,5 +1,7 @@
 // Array of choices that the computer can pick from.
-const choice = ['Rock', 'Paper', 'Scissors']
+const choice = ['Rock', 'Paper', 'Scissors'];
+
+
 
 // This function grabs a random value from the above array and assigns it as the computers choice.
 function getComputerChoice() {
@@ -8,11 +10,13 @@ function getComputerChoice() {
   return compChoice;
 }
 
+
 // This function prompts the user for an input and stores their selection to be matched up later with the computers choice.
 function getPlayerSelection() {
   let playerSelection = prompt("Enter rock paper or scissors:")
   return playerSelection;
 }
+
 
 // This function takes the user and computer selection that will be grabbed with the two functions above and returns
 // a value that determines who won the round.
@@ -30,6 +34,7 @@ function playRound(playerSelection, computerSelection) {
   else if (playerSelection.toLowerCase() == 'scissors') {
     return (computerSelection.toLowerCase() == 'rock') ? "lose" : "win";
   }
+  
 }
 // This function is the only function that is called to run the program and plays a total of 5 rounds. The for loop
 // breaks once a user reaches 5 wins and alerts the outcome of the game.
@@ -41,24 +46,29 @@ function game() {
 
     switch (outcome) {
       case 'draw':
-        alert("This round is a draw!");
         i -= 1;
+        alert(`This round is a draw!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
         break;
 
       case 'win':
-        alert("You won this round!");
         playerRoundWins += 1;
+        alert(`You won this round!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
         break;
 
       case 'lose':
-        alert("You lost this round!");
         computerRoundWins += 1;
+        alert(`You lost this round!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
         break;
     }
   }
   (playerRoundWins > computerRoundWins) ? alert("Congrats you won the best of 5 rounds!") : alert("Sorry you lose! Better luck next time!");
 }
 
+let keepPlaying = true;
 
+while (keepPlaying) {
 game();
+keepPlaying = confirm("Would you like to play again?");
+}
 
+alert("Thanks for playing!");
