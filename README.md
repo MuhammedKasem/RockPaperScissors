@@ -2,6 +2,8 @@
 
 This project was created as a learning excercise for The Odin Project!
 
+Live Link: https://wryskie.github.io/RockPaperScissors/
+
 
 The Task:
 
