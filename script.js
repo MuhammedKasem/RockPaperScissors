@@ -24,7 +24,6 @@ scissors.addEventListener('click', () => {
   playRound("scissors", getComputerChoice());
 })
 resetBtn.addEventListener('click', resetGame);
-
 // This function grabs a random value from the above array and assigns it as the computers choice.
 function getComputerChoice() {
   let compChoice = choice[Math.floor(Math.random() * choice.length)];
@@ -36,49 +35,49 @@ function getComputerChoice() {
 // a value that determines who won the round.
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-    return roundResults("draw"); 
+    return roundResults("draw");
   }
   else if (playerSelection.toLowerCase() == 'rock') {
-    return (computerSelection.toLowerCase() == 'paper') ? roundResults("lose") : roundResults("win"); 
+    return (computerSelection.toLowerCase() == 'paper') ? roundResults("lose") : roundResults("win");
   }
   else if (playerSelection.toLowerCase() == 'paper') {
-    return (computerSelection.toLowerCase() == 'scissors') ? roundResults("lose") : roundResults("win"); 
+    return (computerSelection.toLowerCase() == 'scissors') ? roundResults("lose") : roundResults("win");
   }
   else if (playerSelection.toLowerCase() == 'scissors') {
-    return (computerSelection.toLowerCase() == 'rock') ? roundResults("lose") : roundResults("win"); 
+    return (computerSelection.toLowerCase() == 'rock') ? roundResults("lose") : roundResults("win");
   }
 }
 
 function roundResults(result) {
- switch (result) {
+  switch (result) {
     case "win":
-    playerRoundWins += 1;
-    roundResult.textContent = "You win this round!";
-    playerScore.textContent = `${playerRoundWins}`;
-    botScore.textContent = `${computerRoundWins}`;
-    break;
+      playerRoundWins += 1;
+      roundResult.textContent = "You win this round!";
+      playerScore.textContent = `${playerRoundWins}`;
+      botScore.textContent = `${computerRoundWins}`;
+      break;
 
     case "lose":
-    computerRoundWins += 1;
-    roundResult.textContent = `You lost this round!`;
-    playerScore.textContent = `${playerRoundWins}`;
-    botScore.textContent = `${computerRoundWins}`;
-    break;
-    
+      computerRoundWins += 1;
+      roundResult.textContent = `You lost this round!`;
+      playerScore.textContent = `${playerRoundWins}`;
+      botScore.textContent = `${computerRoundWins}`;
+      break;
+
     case "draw":
-    roundResult.textContent = "This round is a draw!";
-    break;
+      roundResult.textContent = "This round is a draw!";
+      break;
 
   }
 
-    if (playerRoundWins >= 5) { 
+  if (playerRoundWins >= 5) {
     gameStatus.textContent = 'Congratulations! You won!';
     gameStatus.style.color = '#17FD03';
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
-    }
-    else if (computerRoundWins >=5) {
+  }
+  else if (computerRoundWins >= 5) {
     gameStatus.textContent = 'Game Over! You lose!';
     gameStatus.style.color = 'red';
     rock.disabled = true;
@@ -99,5 +98,6 @@ function resetGame() {
   gameStatus.style.color = 'white';
   roundResult.textContent = "Pick your weapon!";
 }
+
 
 // This is a cool that I am working with using VIM aka NeoVim

@@ -137,3 +137,10 @@ body {
   margin: 0;
   color: red;
 }
+
+h3 {
+  font-size: 2em;
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
