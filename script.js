@@ -24,6 +24,7 @@ scissors.addEventListener('click', () => {
   playRound("scissors", getComputerChoice());
 })
 resetBtn.addEventListener('click', resetGame);
+
 // This function grabs a random value from the above array and assigns it as the computers choice.
 function getComputerChoice() {
   let compChoice = choice[Math.floor(Math.random() * choice.length)];
@@ -86,10 +87,6 @@ function roundResults(result) {
   }
 }
 
-if (playerRoundWins >= 5) {
-   gameStatus.textContent = 'Game Over!' 
-}
-
 function resetGame() {
   rock.disabled = false;
   paper.disabled = false;
@@ -101,42 +98,6 @@ function resetGame() {
   gameStatus.textContent = "Game In Progress...";
   gameStatus.style.color = 'white';
   roundResult.textContent = "Pick your weapon!";
-}
-
-// This function is the only function that is called to run the program and plays a total of 5 rounds. The for loop
-// breaks once a user reaches 5 wins and alerts the outcome of the game.
-function game() {
-  let playerRoundWins = 0;
-  let computerRoundWins = 0;
-  for (let i = 0; i < 5; i++) {
-    let outcome = playRound(getPlayerSelection(), getComputerChoice());
-
-    switch (outcome) {
-      case 'draw':
-        i -= 1;
-        alert(`This round is a draw!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
-        break;
-
-      case 'win':
-        playerRoundWins += 1;
-        alert(`You won this round!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
-        break;
-
-      case 'lose':
-        computerRoundWins += 1;
-        alert(`You lost this round!\n \nCurrent Score: \nYou - ${playerRoundWins} \nBot - ${computerRoundWins}`);
-        break;
-    }
-  }
-  (playerRoundWins > computerRoundWins) ? alert("Congrats you won the best of 5 rounds!") : alert("Sorry you lose! Better luck next time!");
-}
-
-  
-let keepPlaying = true;
-
-while (keepPlaying) {
-  game();
-  keepPlaying = confirm("Would you like to play again?");
 }
 
 // This is a cool that I am working with using VIM aka NeoVim
