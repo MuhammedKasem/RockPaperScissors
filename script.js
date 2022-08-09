@@ -10,6 +10,7 @@ const botScore = document.querySelector('#botScore');
 const roundResult = document.querySelector('#roundResult');
 const gameStatus = document.querySelector('#gameStatus');
 const resetBtn = document.querySelector('#reset');
+const computerImg = document.querySelector('.computerImg');
 
 let playerRoundWins = 0;
 let computerRoundWins = 0;
@@ -28,6 +29,22 @@ resetBtn.addEventListener('click', resetGame);
 function getComputerChoice() {
   let compChoice = choice[Math.floor(Math.random() * choice.length)];
   console.log(compChoice);
+  computerImg.classList.remove('rock', 'paper', 'scissors');
+
+  switch (compChoice) {
+
+    case 'rock':
+      computerImg.classList.add('rock');
+      break;
+
+    case 'paper':
+      computerImg.classList.add('paper');
+      break;
+
+    case 'scissors':
+      computerImg.classList.add('scissors');
+      break;
+  }
   return compChoice;
 }
 
@@ -87,16 +104,7 @@ function roundResults(result) {
 }
 
 function resetGame() {
-  rock.disabled = false;
-  paper.disabled = false;
-  scissors.disabled = false;
-  playerRoundWins = 0;
-  computerRoundWins = 0;
-  playerScore.textContent = `${playerRoundWins}`;
-  botScore.textContent = `${computerRoundWins}`;
-  gameStatus.textContent = "Game In Progress...";
-  gameStatus.style.color = 'white';
-  roundResult.textContent = "Pick your weapon!";
+  window.location.reload();
 }
 
 

@@ -25,7 +25,7 @@ body {
   text-align: center;
 }
 
-#rock , #paper, #scissors {
+#rock , #paper, #scissors, .computerImg {
   background-color: magenta;
   border-radius: 10px;
   color: white;
@@ -42,6 +42,22 @@ body {
   transform: scale(1.2);
 }
 
+.computerImg {
+  background-image: url(./mystery.png);
+}
+
+.computerImg.rock {
+  background-image: url(./stone.png);
+}
+
+.computerImg.paper {
+ background-image: url(./paper.png);
+}
+
+.computerImg.scissors {
+  background-image: url(./scissors.png);
+}
+
 #rock {
   background-image: url(./stone.png);
 }
@@ -53,6 +69,7 @@ body {
 #scissors {
   background-image: url(./scissors.png);
 }
+
 .header {
   display: flex;
   justify-content: center;
@@ -75,6 +92,7 @@ body {
   border: 10px solid white;
   border-radius: 30px;
 }
+
 #reset {
   width: 100px;
   height: 50px;
@@ -143,4 +161,28 @@ h3 {
   color: white;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
+}
+
+.computerStats {
+  display: flex;
+  justify-content: center;
+}
+
+.computerImg {
+  margin-bottom:  30px;
+}
+
+.rockTxt, .scissorsTxt, .paperTxt {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.vsText {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: red;
+  margin: 0;
+  font-size: 5em;
+  font-style: italic;
 }
