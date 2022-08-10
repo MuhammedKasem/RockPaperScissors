@@ -25,9 +25,8 @@ body {
   text-align: center;
   border: white solid 10px;
   border-radius: 70px;
-  width: 45%;
   gap: 5px;
-  padding: 15px;
+  padding: 25px;
 }
 
 #rock , #paper, #scissors, .computerImg, .playerImg {
@@ -198,7 +197,7 @@ h3 {
   padding-left: 10px;
   padding-right: 15px;
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: white;
 }
 
 #roundResult {
@@ -208,7 +207,6 @@ h3 {
 .playerImgs {
   margin-top: 30px;
   gap: 8px;
-  width: 30%;
   border: gold solid 10px;
   align-self: center;
   border-radius: 70px;
@@ -237,4 +235,20 @@ h3 {
 .youTxt, .botTxt {
   margin: 0;
   font-style: italic;
+}
+
+.youTxt {
+  color: #17FD03;
+}
+
+.botTxt {
+  color: red;
+}
+
+
+.choicesWrapper, .playersWrapper{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 45%;
 }
