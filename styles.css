@@ -23,14 +23,14 @@ body {
   justify-content: space-around;
   align-self: center;
   text-align: center;
-  border: white solid 5px;
+  border: white solid 10px;
   border-radius: 70px;
   width: 45%;
   gap: 5px;
   padding: 15px;
 }
 
-#rock , #paper, #scissors, .computerImg {
+#rock , #paper, #scissors, .computerImg, .playerImg {
   background-color: magenta;
   border-radius: 10px;
   color: white;
@@ -48,19 +48,19 @@ body {
   transform: scale(1.2);
 }
 
-.computerImg {
+.computerImg, .playerImg {
   background-image: url(./mystery.png);
 }
 
-.computerImg.rock {
+.computerImg.rock, .playerImg.rock {
   background-image: url(./stone.png);
 }
 
-.computerImg.paper {
+.computerImg.paper, .playerImg.paper{
  background-image: url(./paper.png);
 }
 
-.computerImg.scissors {
+.computerImg.scissors, .playerImg.scissors{
   background-image: url(./scissors.png);
 }
 
@@ -173,7 +173,7 @@ h3 {
   -webkit-text-stroke-color: black;
 }
 
-.computerStats {
+.playerImgs {
   display: flex;
   justify-content: center;
 }
@@ -195,8 +195,46 @@ h3 {
   margin: 0;
   font-size: 5em;
   font-style: italic;
+  padding-left: 10px;
+  padding-right: 15px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
 #roundResult {
  color: gold;
+}
+
+.playerImgs {
+  margin-top: 30px;
+  gap: 8px;
+  width: 30%;
+  border: gold solid 10px;
+  align-self: center;
+  border-radius: 70px;
+  padding: 15px;
+}
+
+.computerImg, .playerImg {
+  margin-bottom: 10px;
+}
+
+.playerImg {
+  background-color: #17FD03;
+}
+
+.computerImg {
+  background-color: red;
+}
+
+.computer, .player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.youTxt, .botTxt {
+  margin: 0;
+  font-style: italic;
 }
