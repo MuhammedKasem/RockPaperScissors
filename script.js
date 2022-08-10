@@ -70,6 +70,7 @@ function roundResults(result) {
     case "win":
       playerRoundWins += 1;
       roundResult.textContent = "You win this round!";
+      roundResult.style.color = '#17FD03';
       playerScore.textContent = `${playerRoundWins}`;
       botScore.textContent = `${computerRoundWins}`;
       break;
@@ -77,12 +78,14 @@ function roundResults(result) {
     case "lose":
       computerRoundWins += 1;
       roundResult.textContent = `You lost this round!`;
+      roundResult.style.color = 'red';
       playerScore.textContent = `${playerRoundWins}`;
       botScore.textContent = `${computerRoundWins}`;
       break;
 
     case "draw":
       roundResult.textContent = "This round is a draw!";
+      roundResult.style.color = 'gold';
       break;
 
   }
