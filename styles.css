@@ -20,9 +20,14 @@ body {
 
 .buttonbox {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-around;
+  align-self: center;
   text-align: center;
+  border: white solid 5px;
+  border-radius: 70px;
+  width: 55%;
+  gap: 10px;
+  padding: 30px;
 }
 
 #rock , #paper, #scissors, .computerImg {
@@ -35,6 +40,7 @@ body {
   background-position: center;
   border-width: 10px;
   border-color: white;
+  margin: 10px;
 }
 
 .rock:hover, .paper:hover, .scissors:hover, #reset:hover{
