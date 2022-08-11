@@ -1,5 +1,5 @@
 // Array of choices that the computer can pick from.
-const choice = ['rock', 'paper', 'scissors'];
+const choice = ['Rock', 'Paper', 'Scissors'];
 
 // HTML Elements
 const rock = document.querySelector('#rock');
@@ -12,21 +12,22 @@ const gameStatus = document.querySelector('#gameStatus');
 const resetBtn = document.querySelector('#reset');
 const computerImg = document.querySelector('.computerImg');
 const playerImg = document.querySelector('.playerImg')
+const roundOutcome = document.querySelector('.roundOutcome');
 
 let playerRoundWins = 0;
 let computerRoundWins = 0;
 
 rock.addEventListener('click', () => {
-  playRound("rock", getComputerChoice());
-  assignPlayerIcon("rock");
+  playRound("Rock", getComputerChoice());
+  assignPlayerIcon("Rock");
 })
 paper.addEventListener('click', () => {
-  playRound("paper", getComputerChoice());
-  assignPlayerIcon("paper");
+  playRound("Paper", getComputerChoice());
+  assignPlayerIcon("Paper");
 })
 scissors.addEventListener('click', () => {
-  playRound("scissors", getComputerChoice());
-  assignPlayerIcon("scissors");
+  playRound("Scissors", getComputerChoice());
+  assignPlayerIcon("Scissors");
 })
 resetBtn.addEventListener('click', resetGame);
 // This function grabs a random value from the above array and assigns it as the computers choice.
@@ -37,63 +38,60 @@ function getComputerChoice() {
 }
 
 function assignComputerIcon(compChoice) {
-
   computerImg.classList.remove('rock', 'paper', 'scissors');
   switch (compChoice) {
 
-    case 'rock':
+    case 'Rock':
       computerImg.classList.add('rock');
       break;
 
-    case 'paper':
+    case 'Paper':
       computerImg.classList.add('paper');
       break;
 
-    case 'scissors':
+    case 'Scissors':
       computerImg.classList.add('scissors');
       break;
   }
 }
 
   function assignPlayerIcon(playerChoice) {
-
     playerImg.classList.remove('rock', 'paper', 'scissors');
     switch (playerChoice) {
 
-      case 'rock':
+      case 'Rock':
         playerImg.classList.add('rock');
         break;
 
-      case 'paper':
+      case 'Paper':
         playerImg.classList.add('paper');
         break;
 
-      case 'scissors':
+      case 'Scissors':
         playerImg.classList.add('scissors');
         break;
     }
-
   }
 
   // This function takes the user and computer selection that will be grabbed with the two functions above and returns
   // a value that determines who won the round.
   function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-      return roundResults("draw");
+    if (playerSelection == computerSelection) {
+      return roundResults(playerSelection, computerSelection, "draw");
     }
-    else if (playerSelection.toLowerCase() == 'rock') {
-      return (computerSelection.toLowerCase() == 'paper') ? roundResults("lose") : roundResults("win");
+    else if (playerSelection == 'Rock') {
+      return (computerSelection == 'Paper') ? roundResults(playerSelection, computerSelection, "lose") : roundResults(playerSelection, computerSelection, "win");
     }
-    else if (playerSelection.toLowerCase() == 'paper') {
-      return (computerSelection.toLowerCase() == 'scissors') ? roundResults("lose") : roundResults("win");
+    else if (playerSelection == 'Paper') {
+      return (computerSelection == 'Scissors') ? roundResults(playerSelection, computerSelection, "lose") : roundResults(playerSelection, computerSelection, "win");
     }
-    else if (playerSelection.toLowerCase() == 'scissors') {
-      return (computerSelection.toLowerCase() == 'rock') ? roundResults("lose") : roundResults("win");
+    else if (playerSelection == 'Scissors') {
+      return (computerSelection == 'Rock') ? roundResults(playerSelection, computerSelection, "lose") : roundResults(playerSelection, computerSelection, "win");
     }
     assignComputerIcon();
   }
 
-  function roundResults(result) {
+  function roundResults(playerSelection, computerSelection, result) {
     switch (result) {
       case "win":
         playerRoundWins += 1;
@@ -101,6 +99,8 @@ function assignComputerIcon(compChoice) {
         roundResult.style.color = '#17FD03';
         playerScore.textContent = `${playerRoundWins}`;
         botScore.textContent = `${computerRoundWins}`;
+        roundOutcome.textContent = `${playerSelection} beats ${computerSelection}!`;
+        roundOutcome.style.color = '#17FD03';
         break;
 
       case "lose":
@@ -109,11 +109,15 @@ function assignComputerIcon(compChoice) {
         roundResult.style.color = 'red';
         playerScore.textContent = `${playerRoundWins}`;
         botScore.textContent = `${computerRoundWins}`;
+        roundOutcome.textContent = `${playerSelection} loses to ${computerSelection}!`;
+        roundOutcome.style.color = "red";
         break;
 
       case "draw":
         roundResult.textContent = "This round is a draw!";
         roundResult.style.color = 'gold';
+        roundOutcome.textContent = "Draw!";
+        roundOutcome.style.color = 'gold';
         break;
 
     }

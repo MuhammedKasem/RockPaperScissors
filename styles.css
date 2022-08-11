@@ -13,8 +13,8 @@ body {
   background-image: url('./background.jpg');
   background-position: center;
   background-size: cover;
-  font-family: 'Poppins', sans-serif;
   flex: 1;
+  gap: 10px;
 }
 
 
@@ -23,7 +23,7 @@ body {
   justify-content: space-around;
   align-self: center;
   text-align: center;
-  border: white solid 10px;
+  border: gold solid 10px;
   border-radius: 70px;
   gap: 5px;
   padding: 25px;
@@ -51,21 +51,18 @@ body {
   background-image: url(./mystery.png);
 }
 
-.computerImg.rock, .playerImg.rock {
+#rock, .computerImg.rock, .playerImg.rock {
   background-image: url(./stone.png);
 }
 
-.computerImg.paper, .playerImg.paper{
+#paper, .computerImg.paper, .playerImg.paper{
  background-image: url(./paper.png);
 }
 
-.computerImg.scissors, .playerImg.scissors{
+#scissors, .computerImg.scissors, .playerImg.scissors{
   background-image: url(./scissors.png);
 }
 
-#rock {
-  background-image: url(./stone.png);
-}
 
 #paper {
   background-image: url(./paper.png);
@@ -116,6 +113,7 @@ body {
   font-size: 3em;
   font-style: italic;
   color: gold;
+  margin: 0;
 }
 
 .twitter {
@@ -172,11 +170,6 @@ h3 {
   -webkit-text-stroke-color: black;
 }
 
-.playerImgs {
-  display: flex;
-  justify-content: center;
-}
-
 .computerImg {
   margin-bottom:  30px;
 }
@@ -204,10 +197,13 @@ h3 {
  color: gold;
 }
 
-.playerImgs {
-  margin-top: 30px;
+.resultsArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
-  border: gold solid 10px;
+  border: white solid 10px;
   align-self: center;
   border-radius: 70px;
   padding: 15px;
@@ -251,4 +247,16 @@ h3 {
   align-self: center;
   justify-content: center;
   width: 45%;
+}
+
+.playerIcons {
+  display: flex;
+  align-items: center;
+}
+
+.roundOutcome {
+  margin: 0;
+  font-style: italic;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
