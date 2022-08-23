@@ -18,3 +18,4 @@ My Thoughts:
   in order to solve this assignment.
 - I learned to differentiate between conditionals and decide for myself which tool is best fit for each task.
 - Overall, I had a great experience programming this simple game and I plan on returning to it and adding UI later!
+- After returning to this project, I added a UI that is much more interactive and fun for the user! This was my favorite part of the program!
